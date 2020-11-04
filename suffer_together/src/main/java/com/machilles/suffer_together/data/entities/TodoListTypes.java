@@ -10,7 +10,7 @@ public class TodoListTypes {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long todoListTypeId;
 
-    @Column(name="TodoListType_Name")
+    @Column(name="TodoListType_Name",nullable = false)
     private String todoListTypeName;
 
     public String getTodoListTypeName() {

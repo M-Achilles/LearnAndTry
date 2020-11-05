@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo-App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.userId}">Id</td>
+            <td th:text="${user.userName}">Name</td>
+        </tr>
+    </table>
+</body>
+</html>

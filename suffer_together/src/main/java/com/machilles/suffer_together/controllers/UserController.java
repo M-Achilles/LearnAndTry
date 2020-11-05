@@ -3,6 +3,7 @@ package com.machilles.suffer_together.controllers;
 import com.machilles.suffer_together.data.entities.Users;
 import com.machilles.suffer_together.data.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,12 +18,15 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    Iterable<Users> all(){
-        return userRepository.findAll();
+    public String getUsers(Model model){
+        Iterable<Users> users = userRepository.findAll();
+
+        model.addAttribute("users", users);
+        return "users";
     }
 
     @PostMapping("/users")
-    Users newUser(@RequestBody Users newUser){
+    public Users newUser(@RequestBody Users newUser){
         return userRepository.save(newUser);
     }
 }

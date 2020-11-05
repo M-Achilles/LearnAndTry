@@ -11,7 +11,7 @@ public class Users {
     @Column(name="User_Id")
     private long userId;
 
-    @Column(name="User_Name",unique = true,nullable = false)
+    @Column(name="User_Name",nullable = false)
     private String userName;
 
     @OneToMany
@@ -20,6 +20,14 @@ public class Users {
     inverseJoinColumns = @JoinColumn(name = "TodoList_Id",
             referencedColumnName = "TodoList_Id"))
     private List<TodoLists> todoLists;
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
 
     public String getUserName() {
         return userName;

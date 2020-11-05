@@ -14,7 +14,7 @@ public class Users {
     @Column(name="User_Name",unique = true,nullable = false)
     private String userName;
 
-    @ManyToOne
+    @OneToMany
     @JoinTable(name = "user_todoLists",
     joinColumns = @JoinColumn(name = "User_Id", referencedColumnName = "User_Id"),
     inverseJoinColumns = @JoinColumn(name = "TodoList_Id",

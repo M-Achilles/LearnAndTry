@@ -3,6 +3,8 @@ package com.machilles.suffer_together.data.entities;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name="TodoTypes")
 public class TodoTypes {
     @Id
     @Column(name="TodoType_Id")
@@ -21,5 +23,13 @@ public class TodoTypes {
 
     public void setTodoTypesName(String todoTypesName) {
         this.todoTypeName = todoTypesName;
+    }
+
+    public List<Todos> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todos> todos) {
+        this.todos = todos;
     }
 }

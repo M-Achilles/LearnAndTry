@@ -3,6 +3,8 @@ package com.machilles.suffer_together.data.entities;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name="Users")
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,4 +20,20 @@ public class Users {
     inverseJoinColumns = @JoinColumn(name = "TodoList_Id",
             referencedColumnName = "TodoList_Id"))
     private List<TodoLists> todoLists;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public List<TodoLists> getTodoLists() {
+        return todoLists;
+    }
+
+    public void setTodoLists(List<TodoLists> todoLists) {
+        this.todoLists = todoLists;
+    }
 }

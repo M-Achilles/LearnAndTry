@@ -5,6 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+    <h2>Create new user.</h2>
+    <form action="#" th:action="@{/users}" th:object="${user}" method="post">
+        <p>Username: <input type="text" th:field="*{userName}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+
+    <h2>Choose existing user</h2>
     <table>
         <tr>
             <th>Id</th>

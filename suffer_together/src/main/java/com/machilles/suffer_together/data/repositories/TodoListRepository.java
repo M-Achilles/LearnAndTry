@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface TodoListRepository extends CrudRepository<TodoLists, Long> {
-    Iterable<TodoLists> findByUser(List<Users> users);
+    Iterable<TodoLists> findByUsersIn(List<Users> users);
 }

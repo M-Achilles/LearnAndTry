@@ -24,7 +24,7 @@ public class TodoListController {
         List<Users> userList = new ArrayList<Users>();
         userList.add(users);
 
-        Iterable<TodoLists> todoLists = todoListRepository.findByUser(userList);
+        Iterable<TodoLists> todoLists = todoListRepository.findByUsersIn(userList);
         model.addAttribute("todolists", todoLists);
 
         return "todolists";
